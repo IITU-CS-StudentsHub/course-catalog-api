@@ -1,4 +1,5 @@
 from models import Course
+from typing import Optional
 
 COURSES: list[Course] = [
     Course(
@@ -50,7 +51,7 @@ COURSES: list[Course] = [
 def get_all_courses() -> list[Course]:
     return list(COURSES)
 
-def find_course(course_id: str) -> Course | None:
+def find_course(course_id: str) -> Optional[Course]:
     for course in COURSES:
         if course.id == course_id:
             return course
